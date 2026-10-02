@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Arduino Engineer Academy</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Arduino Engineer Academy
+    </title>
+
 
     <style>
 
-        /* ========================================
-           GENERAL
-        ======================================== */
+        /* ==================================================
+           BASIC RESET
+        ================================================== */
 
         * {
             box-sizing: border-box;
@@ -18,47 +26,82 @@
             padding: 0;
         }
 
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: #101418;
+
             color: #f2f5f7;
+
             min-height: 100vh;
+
         }
+
 
         button {
+
             font-family: inherit;
+
         }
+
 
         .container {
+
             width: min(1100px, 92%);
+
             margin: auto;
+
         }
 
 
-        /* ========================================
+        /* ==================================================
            HEADER
-        ======================================== */
+        ================================================== */
 
         header {
+
             padding: 22px 0;
-            border-bottom: 1px solid #2b3238;
+
+            border-bottom:
+                1px solid #2b3238;
+
         }
+
 
         .header-content {
+
             display: flex;
-            justify-content: space-between;
+
+            justify-content:
+                space-between;
+
             align-items: center;
+
             gap: 20px;
+
         }
+
 
         .logo {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
+
         }
 
+
         .arduino-icon {
+
             width: 46px;
+
             height: 46px;
 
             background: #00979d;
@@ -66,101 +109,142 @@
             border-radius: 50%;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             font-size: 23px;
+
         }
+
 
         .logo h1 {
+
             font-size: 20px;
+
         }
+
 
         .logo p {
+
             font-size: 12px;
+
             color: #8f9aa1;
+
             margin-top: 3px;
+
         }
 
+
         .level {
+
             background: #1b2228;
-            border: 1px solid #303940;
+
+            border:
+                1px solid #303940;
 
             border-radius: 10px;
 
             padding: 9px 15px;
 
             text-align: center;
+
         }
+
 
         .level-label {
+
             font-size: 10px;
+
             color: #8f9aa1;
+
         }
 
+
         .level-number {
+
             font-size: 18px;
+
             font-weight: bold;
 
             color: #4dd4d8;
+
         }
 
 
-        /* ========================================
+        /* ==================================================
            MAIN
-        ======================================== */
+        ================================================== */
 
         main {
-            padding: 35px 0 60px;
+
+            padding:
+                35px 0 60px;
+
         }
 
 
-        /* ========================================
+        /* ==================================================
            MISSION HEADER
-        ======================================== */
+        ================================================== */
 
         .mission-header {
+
             text-align: center;
 
             margin-bottom: 30px;
+
         }
 
+
         .mission-label {
+
             display: inline-block;
 
-            border: 1px solid #304148;
+            border:
+                1px solid #304148;
 
             color: #4dd4d8;
 
-            padding: 7px 12px;
+            padding:
+                7px 12px;
 
             border-radius: 20px;
 
             font-size: 12px;
 
             margin-bottom: 14px;
+
         }
+
 
         .mission-header h2 {
-            font-size: clamp(30px, 5vw, 48px);
+
+            font-size:
+                clamp(30px, 5vw, 48px);
 
             margin-bottom: 10px;
+
         }
 
+
         .mission-header p {
+
             color: #8f9aa1;
 
-            max-width: 600px;
+            max-width: 620px;
 
             margin: auto;
 
             line-height: 1.6;
+
         }
 
 
-        /* ========================================
-           GAME AREA
-        ======================================== */
+        /* ==================================================
+           GAME GRID
+        ================================================== */
 
         .game-layout {
 
@@ -172,6 +256,7 @@
             gap: 20px;
 
             align-items: start;
+
         }
 
 
@@ -179,26 +264,31 @@
 
             background: #171d22;
 
-            border: 1px solid #2b3339;
+            border:
+                1px solid #2b3339;
 
             border-radius: 16px;
 
             padding: 24px;
+
         }
 
 
-        /* ========================================
+        /* ==================================================
            STORY
-        ======================================== */
+        ================================================== */
 
         .story {
 
-            border-left: 3px solid #00979d;
+            border-left:
+                3px solid #00979d;
 
             padding-left: 16px;
 
             margin-bottom: 25px;
+
         }
+
 
         .story-label {
 
@@ -209,7 +299,9 @@
             font-weight: bold;
 
             margin-bottom: 8px;
+
         }
+
 
         .story p {
 
@@ -218,12 +310,13 @@
             line-height: 1.7;
 
             font-size: 15px;
+
         }
 
 
-        /* ========================================
-           ARDUINO SIMULATOR
-        ======================================== */
+        /* ==================================================
+           LAB
+        ================================================== */
 
         .lab-title {
 
@@ -232,7 +325,13 @@
             color: #8f9aa1;
 
             margin-bottom: 12px;
+
         }
+
+
+        /* ==================================================
+           ARDUINO BOARD
+        ================================================== */
 
         .arduino-board {
 
@@ -244,12 +343,13 @@
 
             color: #202020;
 
-            position: relative;
+            border:
+                3px solid #555;
 
-            min-height: 300px;
+            min-height: 350px;
 
-            border: 3px solid #555;
         }
+
 
         .arduino-title {
 
@@ -260,24 +360,29 @@
             font-size: 18px;
 
             margin-bottom: 18px;
+
         }
+
 
         .usb {
 
-            position: absolute;
+            width: 42px;
 
-            left: -15px;
-
-            top: 55px;
-
-            width: 30px;
-
-            height: 55px;
+            height: 60px;
 
             background: #888;
 
-            border-radius: 4px;
+            border-radius: 5px;
+
+            margin:
+                0 auto 15px;
+
         }
+
+
+        /* ==================================================
+           PIN AREA
+        ================================================== */
 
         .pin-section {
 
@@ -285,10 +390,10 @@
 
             border-radius: 8px;
 
-            padding: 12px;
+            padding: 14px;
 
-            margin-bottom: 20px;
         }
+
 
         .pin-title {
 
@@ -296,62 +401,111 @@
 
             color: #555;
 
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+
+            font-weight: bold;
 
         }
+
 
         .pins {
 
-            display: flex;
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
 
             gap: 7px;
 
-            flex-wrap: wrap;
-
         }
+
 
         .pin {
 
-            width: 27px;
-
-            height: 27px;
+            min-height: 38px;
 
             background: #333;
 
             color: white;
 
-            border-radius: 50%;
+            border: none;
 
-            display: flex;
+            border-radius: 7px;
 
-            align-items: center;
+            cursor: pointer;
 
-            justify-content: center;
+            font-size: 10px;
 
-            font-size: 9px;
+            transition:
+                0.2s;
 
         }
 
-        .pin.highlight {
+
+        .pin:hover {
+
+            background: #555;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .pin.selected {
 
             background: #00979d;
 
-            box-shadow: 0 0 10px #00979d;
+            box-shadow:
+                0 0 12px
+                rgba(0,151,157,0.7);
 
         }
 
 
-        /* ========================================
+        .pin.target {
+
+            animation:
+                targetPulse 1.2s infinite;
+
+        }
+
+
+        @keyframes targetPulse {
+
+            0% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(255,193,7,0.7);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 10px
+                    rgba(255,193,7,0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(255,193,7,0);
+            }
+
+        }
+
+
+        /* ==================================================
            LED
-        ======================================== */
+        ================================================== */
 
         .indicator-area {
 
             text-align: center;
 
-            margin-top: 25px;
+            margin-top: 28px;
 
         }
+
 
         .led {
 
@@ -359,9 +513,11 @@
 
             filter: grayscale(1);
 
-            transition: 0.3s;
+            transition:
+                0.3s;
 
         }
+
 
         .led.on {
 
@@ -370,7 +526,9 @@
             text-shadow:
                 0 0 10px #ffe95c,
                 0 0 25px #ffe95c;
+
         }
+
 
         .indicator-label {
 
@@ -379,152 +537,214 @@
             margin-top: 5px;
 
             color: #444;
+
         }
 
 
-        /* ========================================
-           QUESTION
-        ======================================== */
+        /* ==================================================
+           RIGHT PANEL
+        ================================================== */
 
-        .question-title {
+        .panel-title {
 
             font-size: 18px;
 
             font-weight: bold;
 
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+
         }
 
-        .question-description {
+
+        .panel-description {
 
             color: #8f9aa1;
 
             font-size: 13px;
 
-            line-height: 1.6;
+            line-height: 1.7;
 
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+
         }
 
 
-        /* ========================================
-           ANSWERS
-        ======================================== */
+        /* ==================================================
+           PIN INFORMATION
+        ================================================== */
 
-        .answer {
-
-            width: 100%;
-
-            text-align: left;
+        .pin-info {
 
             background: #1c2329;
 
-            border: 1px solid #333d44;
+            border:
+                1px solid #333d44;
 
-            color: #e9eef1;
+            border-radius: 12px;
 
-            border-radius: 10px;
+            padding: 18px;
 
-            padding: 14px;
+            min-height: 190px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .pin-info.empty {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #69757d;
+
+        }
+
+
+        .pin-number {
+
+            color: #4dd4d8;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .pin-name {
+
+            font-size: 24px;
+
+            font-weight: bold;
 
             margin-bottom: 10px;
 
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-        .answer:hover:not(:disabled) {
-
-            border-color: #00979d;
-
-            background: #202a30;
-        }
-
-        .answer:disabled {
-
-            cursor: default;
-        }
-
-        .answer.correct {
-
-            border-color: #35b878;
-
-            background: #173529;
-        }
-
-        .answer.wrong {
-
-            border-color: #c45b5b;
-
-            background: #3a2020;
         }
 
 
-        /* ========================================
-           FEEDBACK
-        ======================================== */
+        .pin-description {
 
-        .feedback {
+            color: #aab4ba;
 
-            margin-top: 18px;
-
-            padding: 15px;
-
-            border-radius: 10px;
-
-            display: none;
+            font-size: 13px;
 
             line-height: 1.6;
 
-            font-size: 14px;
-        }
-
-        .feedback.show {
-
-            display: block;
-        }
-
-        .feedback.correct-feedback {
-
-            background: #173529;
-
-            border: 1px solid #286b4a;
-        }
-
-        .feedback.wrong-feedback {
-
-            background: #3a2020;
-
-            border: 1px solid #744040;
         }
 
 
-        /* ========================================
-           SKILL UNLOCK
-        ======================================== */
+        .pin-type {
 
-        .skill {
+            display: inline-block;
 
-            margin-top: 15px;
+            margin-top: 12px;
 
-            padding: 15px;
+            padding:
+                5px 9px;
 
-            border: 1px solid #3b5558;
+            border:
+                1px solid #3b5558;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            color: #4dd4d8;
+
+        }
+
+
+        /* ==================================================
+           DISCOVERY MESSAGE
+        ================================================== */
+
+        .discovery {
+
+            display: none;
 
             background: #162529;
 
-            border-radius: 10px;
+            border:
+                1px solid #3b5558;
+
+            border-radius: 12px;
+
+            padding: 16px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .discovery.show {
+
+            display: block;
+
+        }
+
+
+        .discovery-title {
+
+            color: #4dd4d8;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .discovery p {
+
+            color: #aab4ba;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ==================================================
+           SKILL
+        ================================================== */
+
+        .skill {
 
             display: none;
+
+            background: #172d2f;
+
+            border:
+                1px solid #35696c;
+
+            border-radius: 12px;
+
+            padding: 16px;
+
+            margin-bottom: 15px;
+
         }
+
 
         .skill.show {
 
             display: block;
+
         }
 
-        .skill-title {
+
+        .skill-label {
 
             color: #4dd4d8;
 
@@ -533,46 +753,50 @@
             font-weight: bold;
 
             margin-bottom: 5px;
+
         }
+
 
         .skill-name {
 
-            font-size: 18px;
+            font-size: 19px;
 
             font-weight: bold;
+
         }
 
 
-        /* ========================================
+        /* ==================================================
            XP
-        ======================================== */
+        ================================================== */
 
-        .xp-reward {
-
-            margin-top: 15px;
+        .xp {
 
             display: none;
 
             color: #ffd85c;
 
             font-weight: bold;
+
+            margin-bottom: 15px;
+
         }
 
-        .xp-reward.show {
+
+        .xp.show {
 
             display: block;
+
         }
 
 
-        /* ========================================
-           BUTTONS
-        ======================================== */
+        /* ==================================================
+           CONTINUE BUTTON
+        ================================================== */
 
         .continue-button {
 
             width: 100%;
-
-            margin-top: 20px;
 
             padding: 14px;
 
@@ -591,17 +815,36 @@
             cursor: pointer;
 
             display: none;
+
         }
+
 
         .continue-button.show {
 
             display: block;
+
         }
+
 
         .continue-button:hover {
 
             background: #00b3ba;
+
         }
+
+
+        .continue-button:disabled {
+
+            opacity: 0.6;
+
+            cursor: default;
+
+        }
+
+
+        /* ==================================================
+           RESET
+        ================================================== */
 
         .reset-button {
 
@@ -611,7 +854,8 @@
 
             padding: 11px;
 
-            border: 1px solid #333d44;
+            border:
+                1px solid #333d44;
 
             border-radius: 10px;
 
@@ -620,19 +864,22 @@
             color: #89949a;
 
             cursor: pointer;
+
         }
+
 
         .reset-button:hover {
 
             color: white;
 
             border-color: #66747c;
+
         }
 
 
-        /* ========================================
-           PROGRESS
-        ======================================== */
+        /* ==================================================
+           XP PROGRESS
+        ================================================== */
 
         .progress-card {
 
@@ -640,28 +887,36 @@
 
             background: #171d22;
 
-            border: 1px solid #2b3339;
+            border:
+                1px solid #2b3339;
 
             border-radius: 14px;
 
             padding: 18px;
+
         }
+
 
         .progress-top {
 
             display: flex;
 
-            justify-content: space-between;
+            justify-content:
+                space-between;
 
             margin-bottom: 10px;
+
         }
+
 
         .progress-title {
 
             font-size: 13px;
 
             color: #aab4ba;
+
         }
+
 
         .xp-display {
 
@@ -670,7 +925,9 @@
             font-weight: bold;
 
             font-size: 13px;
+
         }
+
 
         .progress-bar {
 
@@ -681,7 +938,9 @@
             border-radius: 10px;
 
             overflow: hidden;
+
         }
+
 
         .progress-fill {
 
@@ -691,48 +950,84 @@
 
             background: #00979d;
 
-            transition: width 0.4s;
+            transition:
+                width 0.4s;
+
         }
 
 
-        /* ========================================
-           RESPONSIVE
-        ======================================== */
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+
+            border-top:
+                1px solid #2b3238;
+
+            padding: 25px 0;
+
+            text-align: center;
+
+            color: #69757d;
+
+            font-size: 12px;
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
 
         @media (max-width: 800px) {
 
             .game-layout {
 
-                grid-template-columns: 1fr;
-            }
+                grid-template-columns:
+                    1fr;
 
-            .header-content {
-
-                align-items: flex-start;
             }
 
         }
 
+
         @media (max-width: 500px) {
+
+            .header-content {
+
+                align-items:
+                    flex-start;
+
+            }
+
 
             .logo h1 {
 
                 font-size: 16px;
+
             }
+
 
             .logo p {
 
                 display: none;
+
             }
+
 
             .game-card {
 
                 padding: 18px;
+
             }
 
-            .arduino-board {
 
-                min-height: 270px;
+            .pins {
+
+                grid-template-columns:
+                    repeat(4, 1fr);
+
             }
 
         }
@@ -745,19 +1040,21 @@
 <body>
 
 
-    <!-- ========================================
+    <!-- ==================================================
          HEADER
-    ========================================= -->
+    ================================================== -->
 
     <header>
 
         <div class="container header-content">
+
 
             <div class="logo">
 
                 <div class="arduino-icon">
                     ⚙️
                 </div>
+
 
                 <div>
 
@@ -786,22 +1083,25 @@
 
             </div>
 
+
         </div>
 
     </header>
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          MAIN
-    ========================================= -->
+    ================================================== -->
 
     <main>
 
         <div class="container">
 
 
-            <!-- MISSION HEADER -->
+            <!-- ==================================================
+                 MISSION HEADER
+            ================================================== -->
 
             <section class="mission-header">
 
@@ -809,60 +1109,60 @@
                     🔧 TRAINING MISSION 01
                 </div>
 
+
                 <h2>
-                    Wake Up the Machine
+                    Explore the Arduino
                 </h2>
 
+
                 <p>
-                    Your first job is simple:
-                    figure out how the Arduino can control
-                    something outside itself.
+
+                    Before you can repair the warning light,
+                    you need to understand the Arduino's
+                    control pins.
+
                 </p>
 
             </section>
 
 
 
-            <!-- GAME AREA -->
+            <!-- ==================================================
+                 GAME AREA
+            ================================================== -->
 
             <section class="game-layout">
 
 
-                <!-- =================================
-                     LEFT SIDE
-                ================================== -->
+                <!-- ==================================================
+                     LEFT: ARDUINO
+                ================================================== -->
 
                 <div class="game-card">
 
 
-                    <!-- STORY -->
-
                     <div class="story">
 
                         <div class="story-label">
-                            🧑‍🔧 LAB INCIDENT
+                            🧑‍🔧 YOUR TASK
                         </div>
+
 
                         <p>
 
-                            You've just started your first day
-                            in the electronics laboratory.
+                            Your supervisor has given you
+                            an Arduino Uno.
 
                             <br><br>
 
-                            The laboratory warning indicator
-                            is not working.
-
-                            <br><br>
-
-                            Your supervisor points at the Arduino
-                            and says:
+                            The warning indicator is connected
+                            somewhere on the board.
 
                             <br><br>
 
                             <strong>
-                                "Find out how we can make that
-                                light turn on."
+                                Click the digital pins and
+                                investigate what they do.
                             </strong>
 
                         </p>
@@ -871,89 +1171,49 @@
 
 
 
-                    <!-- ARDUINO -->
-
                     <div class="lab-title">
                         🔌 YOUR WORKBENCH
                     </div>
 
 
+
+                    <!-- ARDUINO -->
+
                     <div class="arduino-board">
 
-                        <div class="usb"></div>
 
                         <div class="arduino-title">
                             ARDUINO UNO
                         </div>
 
 
+                        <div class="usb"></div>
+
+
+
+                        <!-- DIGITAL PINS -->
+
                         <div class="pin-section">
 
                             <div class="pin-title">
+
                                 DIGITAL PINS
+
                             </div>
 
-                            <div class="pins">
 
-                                <div class="pin">
-                                    0
-                                </div>
+                            <div
+                                class="pins"
+                                id="pins">
 
-                                <div class="pin">
-                                    1
-                                </div>
 
-                                <div class="pin">
-                                    2
-                                </div>
+                                <!-- Pins created by JavaScript -->
 
-                                <div class="pin">
-                                    3
-                                </div>
-
-                                <div class="pin">
-                                    4
-                                </div>
-
-                                <div class="pin">
-                                    5
-                                </div>
-
-                                <div class="pin">
-                                    6
-                                </div>
-
-                                <div class="pin">
-                                    7
-                                </div>
-
-                                <div class="pin">
-                                    8
-                                </div>
-
-                                <div class="pin">
-                                    9
-                                </div>
-
-                                <div class="pin">
-                                    10
-                                </div>
-
-                                <div class="pin">
-                                    11
-                                </div>
-
-                                <div class="pin">
-                                    12
-                                </div>
-
-                                <div class="pin highlight">
-                                    13
-                                </div>
 
                             </div>
 
                         </div>
+
 
 
                         <!-- LED -->
@@ -963,105 +1223,95 @@
                             <div
                                 class="led"
                                 id="led">
+
                                 💡
+
                             </div>
 
+
                             <div class="indicator-label">
+
                                 WARNING INDICATOR
+
                             </div>
 
                         </div>
 
+
                     </div>
+
 
                 </div>
 
 
 
-                <!-- =================================
-                     RIGHT SIDE
-                ================================== -->
+                <!-- ==================================================
+                     RIGHT: INFORMATION
+                ================================================== -->
 
                 <div class="game-card">
 
 
-                    <div class="question-title">
+                    <div class="panel-title">
 
-                        🧠 Your First Challenge
-
-                    </div>
-
-
-                    <div class="question-description">
-
-                        The LED is connected to the Arduino.
-
-                        <br><br>
-
-                        But before we can control it,
-                        we need to understand how Arduino
-                        communicates with the outside world.
-
-                        <br><br>
-
-                        <strong>
-                            What should you investigate first?
-                        </strong>
+                        🔎 Pin Investigation
 
                     </div>
 
 
-                    <!-- ANSWER 1 -->
+                    <div class="panel-description">
 
-                    <button
-                        class="answer"
-                        data-answer="wrong">
+                        Click a pin on the Arduino.
 
-                        A. Increase the computer volume
+                        <br><br>
 
-                    </button>
+                        Read the information carefully.
+                        Your goal is to discover which pin
+                        is connected to the warning indicator.
 
-
-                    <!-- ANSWER 2 -->
-
-                    <button
-                        class="answer"
-                        data-answer="correct">
-
-                        B. Find out which Arduino pin
-                        controls the LED
-
-                    </button>
-
-
-                    <!-- ANSWER 3 -->
-
-                    <button
-                        class="answer"
-                        data-answer="wrong">
-
-                        C. Disconnect the USB cable
-
-                    </button>
-
-
-                    <!-- ANSWER 4 -->
-
-                    <button
-                        class="answer"
-                        data-answer="wrong">
-
-                        D. Replace the entire Arduino
-
-                    </button>
+                    </div>
 
 
 
-                    <!-- FEEDBACK -->
+                    <!-- PIN INFORMATION -->
 
                     <div
-                        class="feedback"
-                        id="feedback">
+                        class="pin-info empty"
+                        id="pinInfo">
+
+                        <div>
+
+                            👆
+
+                            <br><br>
+
+                            Select a digital pin
+                            to investigate it.
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DISCOVERY -->
+
+                    <div
+                        class="discovery"
+                        id="discovery">
+
+
+                        <div class="discovery-title">
+
+                            🔍 CLUE DISCOVERED
+
+                        </div>
+
+
+                        <p id="discoveryText">
+
+                        </p>
+
 
                     </div>
 
@@ -1073,19 +1323,32 @@
                         class="skill"
                         id="skill">
 
-                        <div class="skill-title">
+
+                        <div class="skill-label">
+
                             🔓 SKILL UNLOCKED
+
                         </div>
+
 
                         <div class="skill-name">
+
                             Digital Pins
+
                         </div>
 
-                        <p style="margin-top:8px;color:#9ca7ae;font-size:13px;line-height:1.5;">
 
-                            Arduino pins allow the board
-                            to communicate with components
-                            outside the Arduino.
+                        <p
+                            style="
+                            margin-top:8px;
+                            color:#aab4ba;
+                            font-size:13px;
+                            line-height:1.6;
+                            ">
+
+                            Arduino uses pins to communicate
+                            with components connected to the
+                            outside world.
 
                         </p>
 
@@ -1096,8 +1359,8 @@
                     <!-- XP -->
 
                     <div
-                        class="xp-reward"
-                        id="xpReward">
+                        class="xp"
+                        id="xp">
 
                         ⭐ +50 XP
 
@@ -1127,25 +1390,30 @@
 
                     </button>
 
+
                 </div>
+
 
             </section>
 
 
 
-            <!-- =================================
+            <!-- ==================================================
                  PROGRESS
-            ================================== -->
+            ================================================== -->
 
             <section class="progress-card">
 
+
                 <div class="progress-top">
+
 
                     <div class="progress-title">
 
                         🧑‍🔧 Engineer Training Progress
 
                     </div>
+
 
                     <div
                         class="xp-display"
@@ -1155,7 +1423,9 @@
 
                     </div>
 
+
                 </div>
+
 
 
                 <div class="progress-bar">
@@ -1163,9 +1433,11 @@
                     <div
                         class="progress-fill"
                         id="progressFill">
+
                     </div>
 
                 </div>
+
 
             </section>
 
@@ -1176,36 +1448,166 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        Arduino Engineer Academy
+        ·
+        Version 0.3
+
+    </footer>
+
+
+
+    <!-- ==================================================
          JAVASCRIPT
-    ========================================= -->
+    ================================================== -->
 
     <script>
 
-        /* ========================================
-           GET ELEMENTS
-        ========================================= */
 
-        const answers =
-            document.querySelectorAll(".answer");
+        /* ==================================================
+           PIN DATA
+        ================================================== */
 
-        const feedback =
-            document.getElementById("feedback");
+        const pinData = {
+
+            0: {
+                name: "Digital Pin 0",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            1: {
+                name: "Digital Pin 1",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            2: {
+                name: "Digital Pin 2",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            3: {
+                name: "Digital Pin 3",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            4: {
+                name: "Digital Pin 4",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            5: {
+                name: "Digital Pin 5",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            6: {
+                name: "Digital Pin 6",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            7: {
+                name: "Digital Pin 7",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            8: {
+                name: "Digital Pin 8",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            9: {
+                name: "Digital Pin 9",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            10: {
+                name: "Digital Pin 10",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            11: {
+                name: "Digital Pin 11",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            12: {
+                name: "Digital Pin 12",
+                type: "DIGITAL",
+                description:
+                    "This is a digital pin. It can be used to communicate with external components."
+            },
+
+            13: {
+                name: "Digital Pin 13",
+                type: "DIGITAL OUTPUT",
+                description:
+                    "This is the pin connected to our warning indicator. The Arduino can use this pin to control the LED."
+            }
+
+        };
+
+
+
+        /* ==================================================
+           VARIABLES
+        ================================================== */
+
+        let discoveredPin = false;
+
+        let xp = 120;
+
+
+
+        /* ==================================================
+           ELEMENTS
+        ================================================== */
+
+        const pinsContainer =
+            document.getElementById("pins");
+
+        const pinInfo =
+            document.getElementById("pinInfo");
+
+        const discovery =
+            document.getElementById("discovery");
+
+        const discoveryText =
+            document.getElementById("discoveryText");
 
         const skill =
             document.getElementById("skill");
 
-        const xpReward =
-            document.getElementById("xpReward");
-
-        const continueButton =
-            document.getElementById("continueButton");
-
-        const resetButton =
-            document.getElementById("resetButton");
-
-        const led =
-            document.getElementById("led");
+        const xpElement =
+            document.getElementById("xp");
 
         const xpDisplay =
             document.getElementById("xpDisplay");
@@ -1213,238 +1615,361 @@
         const progressFill =
             document.getElementById("progressFill");
 
+        const led =
+            document.getElementById("led");
 
+        const continueButton =
+            document.getElementById("continueButton");
 
-        /* ========================================
-           GAME VARIABLES
-        ========================================= */
+        const resetButton =
+            document.getElementById("resetButton");
 
-        let missionCompleted = false;
 
-        let xp = 120;
 
+        /* ==================================================
+           CREATE PIN BUTTONS
+        ================================================== */
 
+        for (
+            let number = 0;
+            number <= 13;
+            number++
+        ) {
 
-        /* ========================================
-           ANSWER BUTTONS
-        ========================================= */
 
-        answers.forEach(function(answer) {
+            const button =
+                document.createElement("button");
 
-            answer.addEventListener("click", function() {
 
-                const result =
-                    answer.dataset.answer;
+            button.className =
+                "pin";
 
 
-                /* ================================
-                   CORRECT ANSWER
-                ================================= */
+            button.textContent =
+                number;
 
-                if (result === "correct") {
 
-                    missionCompleted = true;
+            button.setAttribute(
+                "aria-label",
+                "Digital pin " + number
+            );
 
 
-                    /* Disable all answers */
+            button.dataset.pin =
+                number;
 
-                    answers.forEach(function(button) {
 
-                        button.disabled = true;
+            pinsContainer.appendChild(
+                button
+            );
 
-                    });
 
+        }
 
-                    /* Highlight correct answer */
 
-                    answer.classList.add("correct");
 
+        /* ==================================================
+           PIN CLICK
+        ================================================== */
 
-                    /* Turn LED on */
+        const pinButtons =
+            document.querySelectorAll(".pin");
 
-                    led.classList.add("on");
 
+        pinButtons.forEach(function(button) {
 
-                    /* Feedback */
 
-                    feedback.innerHTML =
+            button.addEventListener(
+                "click",
+                function() {
 
-                        "<strong>🟢 Correct!</strong><br><br>" +
 
-                        "The Arduino communicates with " +
-                        "the outside world through its pins." +
-
-                        "<br><br>" +
-
-                        "The pin connected to our LED " +
-                        "will eventually be configured " +
-                        "as an <strong>OUTPUT</strong>.";
-
-
-                    feedback.classList.add(
-                        "show",
-                        "correct-feedback"
-                    );
-
-
-                    /* Unlock skill */
-
-                    skill.classList.add("show");
-
-
-                    /* Give XP */
-
-                    xp += 50;
-
-                    xpDisplay.textContent =
-                        xp + " XP";
-
-                    xpReward.classList.add("show");
-
-
-                    /* Increase progress */
-
-                    progressFill.style.width = "25%";
-
-
-                    /* Show continue */
-
-                    continueButton.classList.add(
-                        "show"
-                    );
-
-                }
-
-
-                /* ================================
-                   WRONG ANSWER
-                ================================= */
-
-                else {
-
-                    answer.classList.add("wrong");
-
-
-                    feedback.innerHTML =
-
-                        "<strong>🔴 Not quite.</strong><br><br>" +
-
-                        "Think about what the Arduino " +
-                        "uses to communicate with " +
-                        "external components." +
-
-                        "<br><br>" +
-
-                        "💡 Hint: Look at the labelled " +
-                        "<strong>digital pins</strong> on the board.";
-
-
-                    feedback.classList.add(
-                        "show",
-                        "wrong-feedback"
-                    );
-
-
-                    /* Allow another attempt */
-
-                    setTimeout(function() {
-
-                        answer.classList.remove(
-                            "wrong"
+                    const number =
+                        Number(
+                            button.dataset.pin
                         );
 
-                    }, 800);
+
+                    const data =
+                        pinData[number];
+
+
+                    /* Remove previous selection */
+
+                    pinButtons.forEach(
+                        function(pin) {
+
+                            pin.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                    /* Select current pin */
+
+                    button.classList.add(
+                        "selected"
+                    );
+
+
+                    /* Display information */
+
+                    pinInfo.classList.remove(
+                        "empty"
+                    );
+
+
+                    pinInfo.innerHTML =
+
+                        "<div class='pin-number'>" +
+
+                        "PIN " +
+                        number +
+
+                        "</div>" +
+
+
+                        "<div class='pin-name'>" +
+
+                        data.name +
+
+                        "</div>" +
+
+
+                        "<div class='pin-description'>" +
+
+                        data.description +
+
+                        "</div>" +
+
+
+                        "<div class='pin-type'>" +
+
+                        data.type +
+
+                        "</div>";
+
+
+                    /* ==================================
+                       CORRECT PIN
+                    ================================== */
+
+                    if (number === 13) {
+
+
+                        if (!discoveredPin) {
+
+
+                            discoveredPin =
+                                true;
+
+
+                            /* LED turns on */
+
+                            led.classList.add(
+                                "on"
+                            );
+
+
+                            /* Discovery message */
+
+                            discoveryText.innerHTML =
+
+                                "<strong>Pin 13 is connected " +
+                                "to the warning indicator.</strong>" +
+
+                                "<br><br>" +
+
+                                "You have discovered that " +
+                                "Arduino pins can be used to " +
+                                "control external components.";
+
+
+                            discovery.classList.add(
+                                "show"
+                            );
+
+
+                            /* Skill */
+
+                            skill.classList.add(
+                                "show"
+                            );
+
+
+                            /* XP */
+
+                            xp += 50;
+
+                            xpDisplay.textContent =
+                                xp + " XP";
+
+
+                            xpElement.classList.add(
+                                "show"
+                            );
+
+
+                            /* Progress */
+
+                            progressFill.style.width =
+                                "35%";
+
+
+                            /* Continue */
+
+                            continueButton.classList.add(
+                                "show"
+                            );
+
+
+                        }
+
+                    }
+
+                    /* ==================================
+                       OTHER PINS
+                    ================================== */
+
+                    else {
+
+
+                        discoveryText.innerHTML =
+
+                            "Pin " +
+                            number +
+                            " is a digital pin, " +
+                            "but it is not connected " +
+                            "to our warning indicator.";
+
+
+                        discovery.classList.add(
+                            "show"
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         });
 
 
 
-        /* ========================================
-           CONTINUE BUTTON
-        ========================================= */
+        /* ==================================================
+           CONTINUE
+        ================================================== */
 
         continueButton.addEventListener(
             "click",
             function() {
 
-                feedback.innerHTML =
-
-                    "<strong>🎉 Mission Complete!</strong><br><br>" +
-
-                    "You've discovered your first " +
-                    "Arduino concept: <strong>digital pins</strong>." +
-
-                    "<br><br>" +
-
-                    "Your next mission will teach you " +
-                    "how to tell the Arduino what a pin " +
-                    "is supposed to do.";
-
-                feedback.classList.remove(
-                    "wrong-feedback"
-                );
-
-                feedback.classList.add(
-                    "correct-feedback"
-                );
 
                 continueButton.textContent =
                     "Mission Complete ✓";
 
-                continueButton.disabled = true;
+
+                continueButton.disabled =
+                    true;
+
+
+                discoveryText.innerHTML =
+
+                    "<strong>🎉 Mission Complete!</strong>" +
+
+                    "<br><br>" +
+
+                    "You investigated the Arduino " +
+                    "and discovered the digital pin " +
+                    "connected to the warning indicator." +
+
+                    "<br><br>" +
+
+                    "Next, you'll learn how to tell " +
+                    "the Arduino what that pin should do.";
+
 
             }
         );
 
 
 
-        /* ========================================
-           RESET BUTTON
-        ========================================= */
+        /* ==================================================
+           RESET
+        ================================================== */
 
         resetButton.addEventListener(
             "click",
             function() {
 
-                missionCompleted = false;
 
-                xp = 120;
-
-
-                /* Reset answers */
-
-                answers.forEach(function(button) {
-
-                    button.disabled = false;
-
-                    button.classList.remove(
-                        "correct",
-                        "wrong"
-                    );
-
-                });
+                discoveredPin =
+                    false;
 
 
-                /* Reset feedback */
+                xp =
+                    120;
 
-                feedback.textContent = "";
 
-                feedback.className =
-                    "feedback";
+                /* Reset pins */
+
+                pinButtons.forEach(
+                    function(pin) {
+
+                        pin.classList.remove(
+                            "selected"
+                        );
+
+                    }
+                );
+
+
+                /* Reset information */
+
+                pinInfo.className =
+                    "pin-info empty";
+
+
+                pinInfo.innerHTML =
+
+                    "<div>" +
+
+                    "👆" +
+
+                    "<br><br>" +
+
+                    "Select a digital pin " +
+                    "to investigate it." +
+
+                    "</div>";
+
+
+                /* Reset discovery */
+
+                discovery.classList.remove(
+                    "show"
+                );
+
+
+                discoveryText.textContent =
+                    "";
 
 
                 /* Reset skill */
 
-                skill.classList.remove("show");
+                skill.classList.remove(
+                    "show"
+                );
 
 
                 /* Reset XP */
 
-                xpReward.classList.remove("show");
+                xpElement.classList.remove(
+                    "show"
+                );
+
 
                 xpDisplay.textContent =
                     "120 XP";
@@ -1458,7 +1983,9 @@
 
                 /* Reset LED */
 
-                led.classList.remove("on");
+                led.classList.remove(
+                    "on"
+                );
 
 
                 /* Reset continue */
@@ -1467,12 +1994,22 @@
                     "show"
                 );
 
-                continueButton.disabled = false;
+
+                continueButton.disabled =
+                    false;
+
+
+                continueButton.textContent =
+                    "Continue Mission →";
+
 
             }
         );
 
+
     </script>
 
+
 </body>
+
 </html>
