@@ -7,6 +7,11 @@
     <title>Arduino Engineer Academy</title>
 
     <style>
+
+        /* ========================================
+           GENERAL
+        ======================================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,21 +25,22 @@
             min-height: 100vh;
         }
 
-        /* -------------------------
-           MAIN CONTAINER
-        ------------------------- */
+        button {
+            font-family: inherit;
+        }
 
         .container {
             width: min(1100px, 92%);
             margin: auto;
         }
 
-        /* -------------------------
+
+        /* ========================================
            HEADER
-        ------------------------- */
+        ======================================== */
 
         header {
-            padding: 28px 0;
+            padding: 22px 0;
             border-bottom: 1px solid #2b3238;
         }
 
@@ -52,14 +58,18 @@
         }
 
         .arduino-icon {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
+
             background: #00979d;
+
             border-radius: 50%;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+
+            font-size: 23px;
         }
 
         .logo h1 {
@@ -68,297 +78,679 @@
 
         .logo p {
             font-size: 12px;
-            color: #9ca7ae;
+            color: #8f9aa1;
             margin-top: 3px;
         }
 
         .level {
             background: #1b2228;
             border: 1px solid #303940;
+
             border-radius: 10px;
-            padding: 10px 15px;
+
+            padding: 9px 15px;
+
             text-align: center;
         }
 
         .level-label {
-            font-size: 11px;
-            color: #9ca7ae;
+            font-size: 10px;
+            color: #8f9aa1;
         }
 
         .level-number {
             font-size: 18px;
             font-weight: bold;
+
             color: #4dd4d8;
         }
 
-        /* -------------------------
-           HERO
-        ------------------------- */
 
-        .hero {
-            padding: 70px 0 50px;
+        /* ========================================
+           MAIN
+        ======================================== */
+
+        main {
+            padding: 35px 0 60px;
+        }
+
+
+        /* ========================================
+           MISSION HEADER
+        ======================================== */
+
+        .mission-header {
             text-align: center;
+
+            margin-bottom: 30px;
         }
 
-        .hero-badge {
+        .mission-label {
             display: inline-block;
-            padding: 7px 12px;
+
             border: 1px solid #304148;
+
+            color: #4dd4d8;
+
+            padding: 7px 12px;
+
             border-radius: 20px;
-            color: #4dd4d8;
+
             font-size: 12px;
-            margin-bottom: 20px;
+
+            margin-bottom: 14px;
         }
 
-        .hero h2 {
-            font-size: clamp(34px, 6vw, 58px);
-            line-height: 1.05;
-            margin-bottom: 18px;
+        .mission-header h2 {
+            font-size: clamp(30px, 5vw, 48px);
+
+            margin-bottom: 10px;
         }
 
-        .hero h2 span {
-            color: #4dd4d8;
-        }
+        .mission-header p {
+            color: #8f9aa1;
 
-        .hero p {
-            max-width: 620px;
+            max-width: 600px;
+
             margin: auto;
-            color: #aab4ba;
-            line-height: 1.7;
-            font-size: 16px;
+
+            line-height: 1.6;
         }
 
-        /* -------------------------
-           START BUTTON
-        ------------------------- */
 
-        .start-button {
-            margin-top: 32px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            background: #00979d;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+        /* ========================================
+           GAME AREA
+        ======================================== */
 
-        .start-button:hover {
-            background: #00b3ba;
-            transform: translateY(-2px);
-        }
+        .game-layout {
 
-        /* -------------------------
-           PLAYER PROGRESS
-        ------------------------- */
+            display: grid;
 
-        .progress-card {
-            background: #171d22;
-            border: 1px solid #2b3339;
-            border-radius: 16px;
-            padding: 22px;
-            margin-bottom: 40px;
-        }
+            grid-template-columns:
+                1fr 1fr;
 
-        .progress-top {
-            display: flex;
-            justify-content: space-between;
             gap: 20px;
+
+            align-items: start;
+        }
+
+
+        .game-card {
+
+            background: #171d22;
+
+            border: 1px solid #2b3339;
+
+            border-radius: 16px;
+
+            padding: 24px;
+        }
+
+
+        /* ========================================
+           STORY
+        ======================================== */
+
+        .story {
+
+            border-left: 3px solid #00979d;
+
+            padding-left: 16px;
+
+            margin-bottom: 25px;
+        }
+
+        .story-label {
+
+            color: #4dd4d8;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .story p {
+
+            color: #c6cdd1;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ========================================
+           ARDUINO SIMULATOR
+        ======================================== */
+
+        .lab-title {
+
+            font-size: 13px;
+
+            color: #8f9aa1;
+
             margin-bottom: 12px;
         }
 
-        .progress-title {
-            font-weight: bold;
+        .arduino-board {
+
+            background: #d8d8d8;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            color: #202020;
+
+            position: relative;
+
+            min-height: 300px;
+
+            border: 3px solid #555;
         }
 
-        .xp {
-            color: #4dd4d8;
+        .arduino-title {
+
+            text-align: center;
+
+            font-weight: bold;
+
+            font-size: 18px;
+
+            margin-bottom: 18px;
+        }
+
+        .usb {
+
+            position: absolute;
+
+            left: -15px;
+
+            top: 55px;
+
+            width: 30px;
+
+            height: 55px;
+
+            background: #888;
+
+            border-radius: 4px;
+        }
+
+        .pin-section {
+
+            background: #eeeeee;
+
+            border-radius: 8px;
+
+            padding: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        .pin-title {
+
+            font-size: 11px;
+
+            color: #555;
+
+            margin-bottom: 8px;
+
+        }
+
+        .pins {
+
+            display: flex;
+
+            gap: 7px;
+
+            flex-wrap: wrap;
+
+        }
+
+        .pin {
+
+            width: 27px;
+
+            height: 27px;
+
+            background: #333;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 9px;
+
+        }
+
+        .pin.highlight {
+
+            background: #00979d;
+
+            box-shadow: 0 0 10px #00979d;
+
+        }
+
+
+        /* ========================================
+           LED
+        ======================================== */
+
+        .indicator-area {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+        }
+
+        .led {
+
+            font-size: 62px;
+
+            filter: grayscale(1);
+
+            transition: 0.3s;
+
+        }
+
+        .led.on {
+
+            filter: none;
+
+            text-shadow:
+                0 0 10px #ffe95c,
+                0 0 25px #ffe95c;
+        }
+
+        .indicator-label {
+
+            font-size: 12px;
+
+            margin-top: 5px;
+
+            color: #444;
+        }
+
+
+        /* ========================================
+           QUESTION
+        ======================================== */
+
+        .question-title {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .question-description {
+
+            color: #8f9aa1;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ========================================
+           ANSWERS
+        ======================================== */
+
+        .answer {
+
+            width: 100%;
+
+            text-align: left;
+
+            background: #1c2329;
+
+            border: 1px solid #333d44;
+
+            color: #e9eef1;
+
+            border-radius: 10px;
+
+            padding: 14px;
+
+            margin-bottom: 10px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .answer:hover:not(:disabled) {
+
+            border-color: #00979d;
+
+            background: #202a30;
+        }
+
+        .answer:disabled {
+
+            cursor: default;
+        }
+
+        .answer.correct {
+
+            border-color: #35b878;
+
+            background: #173529;
+        }
+
+        .answer.wrong {
+
+            border-color: #c45b5b;
+
+            background: #3a2020;
+        }
+
+
+        /* ========================================
+           FEEDBACK
+        ======================================== */
+
+        .feedback {
+
+            margin-top: 18px;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            display: none;
+
+            line-height: 1.6;
+
             font-size: 14px;
         }
 
-        .progress-bar {
+        .feedback.show {
+
+            display: block;
+        }
+
+        .feedback.correct-feedback {
+
+            background: #173529;
+
+            border: 1px solid #286b4a;
+        }
+
+        .feedback.wrong-feedback {
+
+            background: #3a2020;
+
+            border: 1px solid #744040;
+        }
+
+
+        /* ========================================
+           SKILL UNLOCK
+        ======================================== */
+
+        .skill {
+
+            margin-top: 15px;
+
+            padding: 15px;
+
+            border: 1px solid #3b5558;
+
+            background: #162529;
+
+            border-radius: 10px;
+
+            display: none;
+        }
+
+        .skill.show {
+
+            display: block;
+        }
+
+        .skill-title {
+
+            color: #4dd4d8;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+        }
+
+        .skill-name {
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+
+        /* ========================================
+           XP
+        ======================================== */
+
+        .xp-reward {
+
+            margin-top: 15px;
+
+            display: none;
+
+            color: #ffd85c;
+
+            font-weight: bold;
+        }
+
+        .xp-reward.show {
+
+            display: block;
+        }
+
+
+        /* ========================================
+           BUTTONS
+        ======================================== */
+
+        .continue-button {
+
             width: 100%;
-            height: 9px;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #00979d;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            display: none;
+        }
+
+        .continue-button.show {
+
+            display: block;
+        }
+
+        .continue-button:hover {
+
+            background: #00b3ba;
+        }
+
+        .reset-button {
+
+            width: 100%;
+
+            margin-top: 10px;
+
+            padding: 11px;
+
+            border: 1px solid #333d44;
+
+            border-radius: 10px;
+
+            background: transparent;
+
+            color: #89949a;
+
+            cursor: pointer;
+        }
+
+        .reset-button:hover {
+
+            color: white;
+
+            border-color: #66747c;
+        }
+
+
+        /* ========================================
+           PROGRESS
+        ======================================== */
+
+        .progress-card {
+
+            margin-top: 20px;
+
+            background: #171d22;
+
+            border: 1px solid #2b3339;
+
+            border-radius: 14px;
+
+            padding: 18px;
+        }
+
+        .progress-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 10px;
+        }
+
+        .progress-title {
+
+            font-size: 13px;
+
+            color: #aab4ba;
+        }
+
+        .xp-display {
+
+            color: #4dd4d8;
+
+            font-weight: bold;
+
+            font-size: 13px;
+        }
+
+        .progress-bar {
+
+            height: 7px;
+
             background: #252d33;
-            border-radius: 20px;
+
+            border-radius: 10px;
+
             overflow: hidden;
         }
 
         .progress-fill {
+
             width: 18%;
+
             height: 100%;
+
             background: #00979d;
-            border-radius: 20px;
+
+            transition: width 0.4s;
         }
 
-        .progress-text {
-            margin-top: 10px;
-            color: #8f9aa1;
-            font-size: 12px;
-        }
 
-        /* -------------------------
-           MISSION MAP
-        ------------------------- */
-
-        .section-title {
-            margin-bottom: 20px;
-        }
-
-        .section-title h3 {
-            font-size: 24px;
-        }
-
-        .section-title p {
-            color: #8f9aa1;
-            margin-top: 5px;
-            font-size: 14px;
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 60px;
-        }
-
-        .mission {
-            background: #171d22;
-            border: 1px solid #2b3339;
-            border-radius: 14px;
-            padding: 20px;
-            min-height: 180px;
-            position: relative;
-        }
-
-        .mission-number {
-            color: #4dd4d8;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .mission h4 {
-            margin-top: 12px;
-            font-size: 18px;
-        }
-
-        .mission p {
-            color: #8f9aa1;
-            font-size: 13px;
-            line-height: 1.5;
-            margin-top: 8px;
-        }
-
-        .mission-status {
-            position: absolute;
-            bottom: 18px;
-            left: 20px;
-            font-size: 12px;
-        }
-
-        .available {
-            color: #4dd4d8;
-        }
-
-        .locked {
-            color: #626b72;
-        }
-
-        /* -------------------------
-           LEARNING PHILOSOPHY
-        ------------------------- */
-
-        .learning {
-            background: #171d22;
-            border: 1px solid #2b3339;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 50px;
-        }
-
-        .learning h3 {
-            margin-bottom: 20px;
-        }
-
-        .learning-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .flow-item {
-            text-align: center;
-            flex: 1;
-            min-width: 90px;
-        }
-
-        .flow-icon {
-            font-size: 27px;
-            margin-bottom: 8px;
-        }
-
-        .flow-item p {
-            font-size: 12px;
-            color: #9ca7ae;
-        }
-
-        .arrow {
-            color: #59636a;
-            font-size: 20px;
-        }
-
-        /* -------------------------
-           FOOTER
-        ------------------------- */
-
-        footer {
-            border-top: 1px solid #2b3238;
-            padding: 25px 0;
-            color: #6f7a81;
-            font-size: 12px;
-            text-align: center;
-        }
-
-        /* -------------------------
+        /* ========================================
            RESPONSIVE
-        ------------------------- */
+        ======================================== */
 
-        @media (max-width: 750px) {
+        @media (max-width: 800px) {
 
-            .header-content {
-                align-items: flex-start;
-            }
+            .game-layout {
 
-            .mission-grid {
                 grid-template-columns: 1fr;
             }
 
-            .learning-flow {
-                flex-direction: column;
+            .header-content {
+
+                align-items: flex-start;
             }
 
-            .arrow {
-                transform: rotate(90deg);
-            }
-
-            .hero {
-                padding-top: 50px;
-            }
         }
+
+        @media (max-width: 500px) {
+
+            .logo h1 {
+
+                font-size: 16px;
+            }
+
+            .logo p {
+
+                display: none;
+            }
+
+            .game-card {
+
+                padding: 18px;
+            }
+
+            .arduino-board {
+
+                min-height: 270px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
+
+    <!-- ========================================
          HEADER
-    ========================== -->
+    ========================================= -->
 
     <header>
+
         <div class="container header-content">
 
             <div class="logo">
@@ -368,11 +760,19 @@
                 </div>
 
                 <div>
-                    <h1>Arduino Engineer Academy</h1>
-                    <p>Learn. Build. Debug. Engineer.</p>
+
+                    <h1>
+                        Arduino Engineer Academy
+                    </h1>
+
+                    <p>
+                        Learn. Build. Debug. Engineer.
+                    </p>
+
                 </div>
 
             </div>
+
 
             <div class="level">
 
@@ -387,335 +787,690 @@
             </div>
 
         </div>
+
     </header>
 
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
 
     <main>
 
-        <!-- HERO -->
+        <div class="container">
 
-        <section class="hero">
 
-            <div class="container">
+            <!-- MISSION HEADER -->
 
-                <div class="hero-badge">
-                    🎮 LEARNING THROUGH ENGINEERING MISSIONS
+            <section class="mission-header">
+
+                <div class="mission-label">
+                    🔧 TRAINING MISSION 01
                 </div>
 
                 <h2>
-                    Become an<br>
-                    <span>Arduino Engineer.</span>
+                    Wake Up the Machine
                 </h2>
 
                 <p>
-                    Don't memorize Arduino tutorials.
-                    Solve problems, build circuits, write code,
-                    make mistakes and discover how things work.
+                    Your first job is simple:
+                    figure out how the Arduino can control
+                    something outside itself.
                 </p>
 
-                <button
-                    class="start-button"
-                    id="startButton">
-                    ▶ Start Training
-                </button>
-
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- PLAYER PROGRESS -->
 
-        <section class="container">
+            <!-- GAME AREA -->
 
-            <div class="progress-card">
+            <section class="game-layout">
+
+
+                <!-- =================================
+                     LEFT SIDE
+                ================================== -->
+
+                <div class="game-card">
+
+
+                    <!-- STORY -->
+
+                    <div class="story">
+
+                        <div class="story-label">
+                            🧑‍🔧 LAB INCIDENT
+                        </div>
+
+                        <p>
+
+                            You've just started your first day
+                            in the electronics laboratory.
+
+                            <br><br>
+
+                            The laboratory warning indicator
+                            is not working.
+
+                            <br><br>
+
+                            Your supervisor points at the Arduino
+                            and says:
+
+                            <br><br>
+
+                            <strong>
+                                "Find out how we can make that
+                                light turn on."
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- ARDUINO -->
+
+                    <div class="lab-title">
+                        🔌 YOUR WORKBENCH
+                    </div>
+
+
+                    <div class="arduino-board">
+
+                        <div class="usb"></div>
+
+                        <div class="arduino-title">
+                            ARDUINO UNO
+                        </div>
+
+
+                        <div class="pin-section">
+
+                            <div class="pin-title">
+                                DIGITAL PINS
+                            </div>
+
+                            <div class="pins">
+
+                                <div class="pin">
+                                    0
+                                </div>
+
+                                <div class="pin">
+                                    1
+                                </div>
+
+                                <div class="pin">
+                                    2
+                                </div>
+
+                                <div class="pin">
+                                    3
+                                </div>
+
+                                <div class="pin">
+                                    4
+                                </div>
+
+                                <div class="pin">
+                                    5
+                                </div>
+
+                                <div class="pin">
+                                    6
+                                </div>
+
+                                <div class="pin">
+                                    7
+                                </div>
+
+                                <div class="pin">
+                                    8
+                                </div>
+
+                                <div class="pin">
+                                    9
+                                </div>
+
+                                <div class="pin">
+                                    10
+                                </div>
+
+                                <div class="pin">
+                                    11
+                                </div>
+
+                                <div class="pin">
+                                    12
+                                </div>
+
+                                <div class="pin highlight">
+                                    13
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- LED -->
+
+                        <div class="indicator-area">
+
+                            <div
+                                class="led"
+                                id="led">
+                                💡
+                            </div>
+
+                            <div class="indicator-label">
+                                WARNING INDICATOR
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     RIGHT SIDE
+                ================================== -->
+
+                <div class="game-card">
+
+
+                    <div class="question-title">
+
+                        🧠 Your First Challenge
+
+                    </div>
+
+
+                    <div class="question-description">
+
+                        The LED is connected to the Arduino.
+
+                        <br><br>
+
+                        But before we can control it,
+                        we need to understand how Arduino
+                        communicates with the outside world.
+
+                        <br><br>
+
+                        <strong>
+                            What should you investigate first?
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ANSWER 1 -->
+
+                    <button
+                        class="answer"
+                        data-answer="wrong">
+
+                        A. Increase the computer volume
+
+                    </button>
+
+
+                    <!-- ANSWER 2 -->
+
+                    <button
+                        class="answer"
+                        data-answer="correct">
+
+                        B. Find out which Arduino pin
+                        controls the LED
+
+                    </button>
+
+
+                    <!-- ANSWER 3 -->
+
+                    <button
+                        class="answer"
+                        data-answer="wrong">
+
+                        C. Disconnect the USB cable
+
+                    </button>
+
+
+                    <!-- ANSWER 4 -->
+
+                    <button
+                        class="answer"
+                        data-answer="wrong">
+
+                        D. Replace the entire Arduino
+
+                    </button>
+
+
+
+                    <!-- FEEDBACK -->
+
+                    <div
+                        class="feedback"
+                        id="feedback">
+
+                    </div>
+
+
+
+                    <!-- SKILL -->
+
+                    <div
+                        class="skill"
+                        id="skill">
+
+                        <div class="skill-title">
+                            🔓 SKILL UNLOCKED
+                        </div>
+
+                        <div class="skill-name">
+                            Digital Pins
+                        </div>
+
+                        <p style="margin-top:8px;color:#9ca7ae;font-size:13px;line-height:1.5;">
+
+                            Arduino pins allow the board
+                            to communicate with components
+                            outside the Arduino.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- XP -->
+
+                    <div
+                        class="xp-reward"
+                        id="xpReward">
+
+                        ⭐ +50 XP
+
+                    </div>
+
+
+
+                    <!-- CONTINUE -->
+
+                    <button
+                        class="continue-button"
+                        id="continueButton">
+
+                        Continue Mission →
+
+                    </button>
+
+
+
+                    <!-- RESET -->
+
+                    <button
+                        class="reset-button"
+                        id="resetButton">
+
+                        ↻ Restart Mission
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 PROGRESS
+            ================================== -->
+
+            <section class="progress-card">
 
                 <div class="progress-top">
 
                     <div class="progress-title">
+
                         🧑‍🔧 Engineer Training Progress
+
                     </div>
 
-                    <div class="xp">
+                    <div
+                        class="xp-display"
+                        id="xpDisplay">
+
                         120 XP
+
                     </div>
 
                 </div>
+
 
                 <div class="progress-bar">
 
-                    <div class="progress-fill"></div>
-
-                </div>
-
-                <div class="progress-text">
-                    Mission 1 of 14 · 18% complete
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- MISSION MAP -->
-
-        <section class="container">
-
-            <div class="section-title">
-
-                <h3>🗺️ Training Missions</h3>
-
-                <p>
-                    Complete each mission to unlock the next engineering challenge.
-                </p>
-
-            </div>
-
-
-            <div class="mission-grid">
-
-                <!-- Mission 1 -->
-
-                <div class="mission">
-
-                    <div class="mission-number">
-                        MISSION 01
-                    </div>
-
-                    <h4>
-                        Wake Up the Machine
-                    </h4>
-
-                    <p>
-                        Meet your Arduino and discover
-                        what its pins actually do.
-                    </p>
-
-                    <div class="mission-status available">
-                        ● AVAILABLE
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
                     </div>
 
                 </div>
 
-
-                <!-- Mission 2 -->
-
-                <div class="mission">
-
-                    <div class="mission-number">
-                        MISSION 02
-                    </div>
-
-                    <h4>
-                        Control the LED
-                    </h4>
-
-                    <p>
-                        Configure an output and control
-                        your first virtual component.
-                    </p>
-
-                    <div class="mission-status locked">
-                        🔒 LOCKED
-                    </div>
-
-                </div>
+            </section>
 
 
-                <!-- Mission 3 -->
-
-                <div class="mission">
-
-                    <div class="mission-number">
-                        MISSION 03
-                    </div>
-
-                    <h4>
-                        Make It Blink
-                    </h4>
-
-                    <p>
-                        Discover timing and make your
-                        warning light blink.
-                    </p>
-
-                    <div class="mission-status locked">
-                        🔒 LOCKED
-                    </div>
-
-                </div>
-
-
-                <!-- Mission 4 -->
-
-                <div class="mission">
-
-                    <div class="mission-number">
-                        MISSION 04
-                    </div>
-
-                    <h4>
-                        Press the Button
-                    </h4>
-
-                    <p>
-                        Teach the Arduino to listen
-                        to an external input.
-                    </p>
-
-                    <div class="mission-status locked">
-                        🔒 LOCKED
-                    </div>
-
-                </div>
-
-
-                <!-- Mission 5 -->
-
-                <div class="mission">
-
-                    <div class="mission-number">
-                        MISSION 05
-                    </div>
-
-                    <h4>
-                        Make a Decision
-                    </h4>
-
-                    <p>
-                        Use logic to make your Arduino
-                        react to what it detects.
-                    </p>
-
-                    <div class="mission-status locked">
-                        🔒 LOCKED
-                    </div>
-
-                </div>
-
-
-                <!-- Mission 6 -->
-
-                <div class="mission">
-
-                    <div class="mission-number">
-                        MISSION 06
-                    </div>
-
-                    <h4>
-                        Enter the Sensor Lab
-                    </h4>
-
-                    <p>
-                        Begin working with real-world
-                        information from sensors.
-                    </p>
-
-                    <div class="mission-status locked">
-                        🔒 LOCKED
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- LEARNING SYSTEM -->
-
-        <section class="container">
-
-            <div class="learning">
-
-                <h3>
-                    🧠 How You Learn
-                </h3>
-
-                <div class="learning-flow">
-
-                    <div class="flow-item">
-                        <div class="flow-icon">🎮</div>
-                        <p>Receive a mission</p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                    <div class="flow-item">
-                        <div class="flow-icon">🧠</div>
-                        <p>Think about the problem</p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                    <div class="flow-item">
-                        <div class="flow-icon">🔌</div>
-                        <p>Build the circuit</p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                    <div class="flow-item">
-                        <div class="flow-icon">💻</div>
-                        <p>Write the code</p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                    <div class="flow-item">
-                        <div class="flow-icon">🔧</div>
-                        <p>Debug it</p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                    <div class="flow-item">
-                        <div class="flow-icon">⭐</div>
-                        <p>Unlock the next skill</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
-    <footer>
-
-        <div class="container">
-            Arduino Engineer Academy · Version 0.1
-        </div>
-
-    </footer>
-
-
-    <!-- =========================
+    <!-- ========================================
          JAVASCRIPT
-    ========================== -->
+    ========================================= -->
 
     <script>
 
-        const startButton = document.getElementById("startButton");
+        /* ========================================
+           GET ELEMENTS
+        ========================================= */
 
-        startButton.addEventListener("click", function () {
+        const answers =
+            document.querySelectorAll(".answer");
 
-            alert(
-                "Training system starting...\n\n" +
-                "Mission 01 will be added in Version 0.2."
-            );
+        const feedback =
+            document.getElementById("feedback");
+
+        const skill =
+            document.getElementById("skill");
+
+        const xpReward =
+            document.getElementById("xpReward");
+
+        const continueButton =
+            document.getElementById("continueButton");
+
+        const resetButton =
+            document.getElementById("resetButton");
+
+        const led =
+            document.getElementById("led");
+
+        const xpDisplay =
+            document.getElementById("xpDisplay");
+
+        const progressFill =
+            document.getElementById("progressFill");
+
+
+
+        /* ========================================
+           GAME VARIABLES
+        ========================================= */
+
+        let missionCompleted = false;
+
+        let xp = 120;
+
+
+
+        /* ========================================
+           ANSWER BUTTONS
+        ========================================= */
+
+        answers.forEach(function(answer) {
+
+            answer.addEventListener("click", function() {
+
+                const result =
+                    answer.dataset.answer;
+
+
+                /* ================================
+                   CORRECT ANSWER
+                ================================= */
+
+                if (result === "correct") {
+
+                    missionCompleted = true;
+
+
+                    /* Disable all answers */
+
+                    answers.forEach(function(button) {
+
+                        button.disabled = true;
+
+                    });
+
+
+                    /* Highlight correct answer */
+
+                    answer.classList.add("correct");
+
+
+                    /* Turn LED on */
+
+                    led.classList.add("on");
+
+
+                    /* Feedback */
+
+                    feedback.innerHTML =
+
+                        "<strong>🟢 Correct!</strong><br><br>" +
+
+                        "The Arduino communicates with " +
+                        "the outside world through its pins." +
+
+                        "<br><br>" +
+
+                        "The pin connected to our LED " +
+                        "will eventually be configured " +
+                        "as an <strong>OUTPUT</strong>.";
+
+
+                    feedback.classList.add(
+                        "show",
+                        "correct-feedback"
+                    );
+
+
+                    /* Unlock skill */
+
+                    skill.classList.add("show");
+
+
+                    /* Give XP */
+
+                    xp += 50;
+
+                    xpDisplay.textContent =
+                        xp + " XP";
+
+                    xpReward.classList.add("show");
+
+
+                    /* Increase progress */
+
+                    progressFill.style.width = "25%";
+
+
+                    /* Show continue */
+
+                    continueButton.classList.add(
+                        "show"
+                    );
+
+                }
+
+
+                /* ================================
+                   WRONG ANSWER
+                ================================= */
+
+                else {
+
+                    answer.classList.add("wrong");
+
+
+                    feedback.innerHTML =
+
+                        "<strong>🔴 Not quite.</strong><br><br>" +
+
+                        "Think about what the Arduino " +
+                        "uses to communicate with " +
+                        "external components." +
+
+                        "<br><br>" +
+
+                        "💡 Hint: Look at the labelled " +
+                        "<strong>digital pins</strong> on the board.";
+
+
+                    feedback.classList.add(
+                        "show",
+                        "wrong-feedback"
+                    );
+
+
+                    /* Allow another attempt */
+
+                    setTimeout(function() {
+
+                        answer.classList.remove(
+                            "wrong"
+                        );
+
+                    }, 800);
+
+                }
+
+            });
 
         });
+
+
+
+        /* ========================================
+           CONTINUE BUTTON
+        ========================================= */
+
+        continueButton.addEventListener(
+            "click",
+            function() {
+
+                feedback.innerHTML =
+
+                    "<strong>🎉 Mission Complete!</strong><br><br>" +
+
+                    "You've discovered your first " +
+                    "Arduino concept: <strong>digital pins</strong>." +
+
+                    "<br><br>" +
+
+                    "Your next mission will teach you " +
+                    "how to tell the Arduino what a pin " +
+                    "is supposed to do.";
+
+                feedback.classList.remove(
+                    "wrong-feedback"
+                );
+
+                feedback.classList.add(
+                    "correct-feedback"
+                );
+
+                continueButton.textContent =
+                    "Mission Complete ✓";
+
+                continueButton.disabled = true;
+
+            }
+        );
+
+
+
+        /* ========================================
+           RESET BUTTON
+        ========================================= */
+
+        resetButton.addEventListener(
+            "click",
+            function() {
+
+                missionCompleted = false;
+
+                xp = 120;
+
+
+                /* Reset answers */
+
+                answers.forEach(function(button) {
+
+                    button.disabled = false;
+
+                    button.classList.remove(
+                        "correct",
+                        "wrong"
+                    );
+
+                });
+
+
+                /* Reset feedback */
+
+                feedback.textContent = "";
+
+                feedback.className =
+                    "feedback";
+
+
+                /* Reset skill */
+
+                skill.classList.remove("show");
+
+
+                /* Reset XP */
+
+                xpReward.classList.remove("show");
+
+                xpDisplay.textContent =
+                    "120 XP";
+
+
+                /* Reset progress */
+
+                progressFill.style.width =
+                    "18%";
+
+
+                /* Reset LED */
+
+                led.classList.remove("on");
+
+
+                /* Reset continue */
+
+                continueButton.classList.remove(
+                    "show"
+                );
+
+                continueButton.disabled = false;
+
+            }
+        );
 
     </script>
 
